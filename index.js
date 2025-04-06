@@ -1,11 +1,19 @@
 import express from 'express'
 import mongoose from 'mongoose';
 import Task from  './models/tasks.model.js'
+import 'dotenv/config'
+
 const app = express()
 
 app.use(express.json())
 
-mongoose.connect('mongodb+srv://turtemirovazhanyl:qBllQjreZAs4V6su@backenddb.yycqcx8.mongodb.net/?retryWrites=true&w=majority&appName=BackendDB').then(() => {
+const MONGODB_USER = process.env.MONGODB_USER
+const MONGODB_PASSWORD = process.env.MONGODB_PASSWORD
+const MONGODB_CLUSTER = process.env.MONGODB_CLUSTER
+
+const mongoURI = `mongodb+srv://${MONGODB_USER}:${MONGODB_PASSWORD}@${MONGODB_CLUSTER}/?retryWrites=true&w=majority&appName=BackendDB`
+
+mongoose.connect(mongoURI).then(() => {
     console.log('Connected to MongoDB')
 }).catch(err => {
     console.log(err)
