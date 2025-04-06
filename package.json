@@ -1,0 +1,21 @@
+{
+ "name": "simple_crud",
+ "version": "1.0.0",
+ "description": "",
+ "main": "index.js",
+ "scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "serve": "node index.js",
+  "dev": "nodemon index.js"
+ },
+ "keywords": [],
+ "author": "",
+ "license": "ISC",
+ "type": "module",
+ "dependencies": {
+  "express": "^5.1.0"
+ },
+ "devDependencies": {
+  "@types/express": "^5.0.1"
+ }
+}
